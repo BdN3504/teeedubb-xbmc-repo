@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="plugin.audio.fbi.radio-1.0.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugin.audio.fbi.radio/plugin.audio.fbi.radio-1.0.1.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
