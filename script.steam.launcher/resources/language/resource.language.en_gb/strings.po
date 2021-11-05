@@ -137,3 +137,7 @@ msgctxt "#50125"
 msgid "Check kodi.log file for details"
 msgstr ""
 
+msgctxt "#50126"
+msgid "SteamLink location"
+msgstr ""
+

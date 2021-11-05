@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="plugin.audio.triple.j-1.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugin.audio.triple.j/plugin.audio.triple.j-1.0.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="service.hyper.launcher">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/service.hyper.launcher/service.hyper.launcher-1.2.2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/service.hyper.launcher/service.hyper.launcher-1.2.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

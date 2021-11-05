@@ -41,6 +41,22 @@
 						<heading>50051</heading>
 					</control>
 				</setting>
+				<setting help="" id="SteamLink" label="50126" type="path">
+					<level>0</level>
+					<default>/usr/bin/steamlink</default>
+					<constraints>
+						<writable>false</writable>
+						<masking>executable</masking>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition name="InfoBool" on="property">System.Platform.Linux</condition>
+						</dependency>
+					</dependencies>
+					<control format="file" type="button">
+						<heading>50126</heading>
+					</control>
+				</setting>
 				<setting help="" id="SteamLinux" label="50052" type="path">
 					<level>0</level>
 					<default>/usr/bin/steam</default>

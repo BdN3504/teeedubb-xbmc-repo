@@ -9,6 +9,7 @@ import stat
 import xbmc
 import xbmcaddon
 import xbmcgui
+from platform.raspberry import raspberry
 
 addon = xbmcaddon.Addon(id='script.steam.launcher')
 addonPath = addon.getAddonInfo('path')
@@ -19,6 +20,7 @@ language = addon.getLocalizedString
 scriptid = 'script.steam.launcher'
 
 steamLinux = addon.getSetting("SteamLinux")
+steamLink = addon.getSetting("SteamLink")
 kodiLinux = addon.getSetting("KodiLinux")
 steamWin = addon.getSetting("SteamWin")
 kodiWin = addon.getSetting("KodiWin")
@@ -38,6 +40,7 @@ osWin = xbmc.getCondVisibility('system.platform.windows')
 osOsx = xbmc.getCondVisibility('system.platform.osx')
 osLinux = xbmc.getCondVisibility('system.platform.linux')
 osAndroid = xbmc.getCondVisibility('system.platform.android')
+platformRaspberry = raspberry().is_raspberry_pi()
 wmctrlCheck = addon.getSetting("WmctrlCheck")
 suspendAudio = addon.getSetting("SuspendAudio")
 customScriptFolder = addon.getSetting("CustomScriptFolder")
@@ -338,8 +341,12 @@ def launchSteam():
 		steamlauncher = os.path.join(scripts_path, 'steam-launcher.sh')
 		cmd = '"%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s"' % (steamlauncher, steamOsx, kodiOsx, quitKodiSetting, kodiPortable, preScript, postScript, steamParameters, forceKillKodi, desktopMode)
 	elif osLinux:
-		steamlauncher = os.path.join(scripts_path, 'steam-launcher.sh')
-		cmd = '"%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s"' % (steamlauncher, steamLinux, kodiLinux, quitKodiSetting, kodiPortable, preScript, postScript, steamParameters, forceKillKodi, desktopMode)
+		if platformRaspberry:
+			steamlauncher = os.path.join(scripts_path, 'steam-launcher.sh')
+			cmd = '"%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s"' % (steamlauncher, steamLinux, kodiLinux, quitKodiSetting, kodiPortable, preScript, postScript, steamParameters, forceKillKodi, desktopMode)
+		else:
+			steamlauncher = os.path.join(scripts_path, 'steam-launcher.sh')
+			cmd = '"%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s" "%s"' % (steamlauncher, steamLinux, kodiLinux, quitKodiSetting, kodiPortable, preScript, postScript, steamParameters, forceKillKodi, desktopMode)
 	try:
 		log('attempting to launch: %s' % cmd)
 #		print cmd.encode('utf-8')

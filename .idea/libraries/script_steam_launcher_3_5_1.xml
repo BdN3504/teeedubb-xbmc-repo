@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="script.steam.launcher-3.5.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/script.steam.launcher/script.steam.launcher-3.5.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
